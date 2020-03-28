@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Device"
+	xmlns:tns="http://www.example.org/Device"
+	elementFormDefault="qualified">
+	<element name="Device" type="tns:DeviceType" />
+	<complexType name="DeviceType">
+		<annotation>
+			<documentation>This is a node that defines what type of device is it
+			</documentation>
+		</annotation>
+		<choice>
+			<element name="Inverter" type="tns:InverterType" />
+			<element name="Meter" type="tns:MeterType" />
+		</choice>
+	</complexType>
+	<complexType name="InverterType">
+		<annotation>
+			<documentation>This is a place holder for the brand, baud rate, ID,
+				etc.
+			</documentation>
+		</annotation>
+		<all>
+			<element name="Brand" type="tns:InverterBrand" />
+			<element name="BaudRate" type="tns:BaudRateType" />
+			<element name="Register" type="tns:RegisterType" />
+			<element name="DataBits" type="tns:DataBitsType" />
+			<element name="Parity" type="tns:ParityType" />
+			<element name="StopBits" type="tns:StopBitsType" />
+			<element name="Encoding" type="tns:EncodingType" />
+			<element name="Echo" type="boolean" />
+			<element name="TimeOut" type="tns:TimeOutType" />
+			<element name="Retries" type="tns:RetriesType" />
+			<element name="CheckingValidity" type="boolean" />
+		</all>
+		<attribute name="ID" type="tns:IDType" use="optional" />
+	</complexType>
+	<complexType name="MeterType">
+		<annotation>
+			<documentation>This is a place holder for the brand, baud rate, ID,
+				etc.
+			</documentation>
+		</annotation>
+		<all>
+			<element name="Brand" type="tns:MeterBrand" />
+			<element name="BaudRate" type="tns:BaudRateType" />
+			<element name="Register" type="tns:RegisterType" />
+			<element name="DataBits" type="tns:DataBitsType" />
+			<element name="Parity" type="tns:ParityType" />
+			<element name="StopBits" type="tns:StopBitsType" />
+			<element name="Encoding" type="tns:EncodingType" />
+			<element name="Echo" type="boolean" />
+			<element name="TimeOut" type="tns:TimeOutType" />
+			<element name="Retries" type="tns:RetriesType" />
+			<element name="CheckingValidity" type="boolean" />
+		</all>
+	</complexType>
+	<simpleType name="InverterBrand">
+		<restriction base="string">
+			<enumeration value="Delta" />
+			<enumeration value="LG" />
+		</restriction>
+	</simpleType>
+	<simpleType name="MeterBrand">
+		<restriction base="string">
+			<enumeration value="Toshiba" />
+		</restriction>
+	</simpleType>
+	<simpleType name="BaudRateType">
+		<restriction base="int">
+			<enumeration value="4800" />
+			<enumeration value="9600" />
+			<enumeration value="19200" />
+		</restriction>
+	</simpleType>
+	<simpleType name="RegisterType">
+		<restriction base="int">
+			<!-- May be it is better to define a pattern for this -->
+			<enumeration value="300001" />
+			<enumeration value="300002" />
+		</restriction>
+	</simpleType>
+	<simpleType name="DataBitsType">
+		<restriction base="int">
+			<enumeration value="8" />
+			<enumeration value="16" />
+		</restriction>
+	</simpleType>
+	<simpleType name="ParityType">
+		<restriction base="string">
+			<enumeration value="None" />
+		</restriction>
+	</simpleType>
+	<simpleType name="StopBitsType">
+		<restriction base="int">
+			<enumeration value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="EncodingType">
+		<restriction base="string">
+			<enumeration value="SERIAL_ENCODING_RTU" />
+		</restriction>
+	</simpleType>
+	<simpleType name="TimeOutType">
+		<restriction base="int">
+			<enumeration value="500" />
+		</restriction>
+	</simpleType>
+	<simpleType name="RetriesType">
+		<restriction base="int">
+			<enumeration value="1" />
+		</restriction>
+	</simpleType>
+	<simpleType name="IDType">
+		<restriction base="string">
+			<pattern value="[0-9]*" />
+		</restriction>
+	</simpleType>
+</schema>
+
+
+
+
+
+
+
+
+
+

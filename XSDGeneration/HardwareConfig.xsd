@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="hardware-configuration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hardware-version" type="xs:string"></xs:element>
+				<xs:element name="dess-configuration" >
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="site-meter-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="io-board-meter-index"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="three-phase-layout"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="simulated" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="alt-ac-front-coupled-meter-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="io-board-meter-index"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="three-phase-layout"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="simulated" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="clp-meter-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="io-board-meter-index"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="three-phase-layout"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="simulated" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="energy-arbitrage-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="deadband">
+											<xs:complexType>
+												<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+												<xs:attribute name="low-charge-percent"
+													type="xs:int"></xs:attribute>
+												<xs:attribute name="low-discharge-percent"
+													type="xs:int"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="frequency-response-enabled"
+											type="xs:string"></xs:element>
+										<xs:element name="during-commitment-only"
+											type="xs:string"></xs:element>
+										<xs:element name="high-frequency-limit"
+											type="xs:double"></xs:element>
+										<xs:element name="high-frequency-deviation"
+											type="xs:double"></xs:element>
+										<xs:element name="nominal-frequency" type="xs:int"></xs:element>
+										<xs:element name="low-frequency-deviation"
+											type="xs:double"></xs:element>
+										<xs:element name="low-frequency-limit"
+											type="xs:double"></xs:element>
+										<xs:element name="high-max-w" type="xs:int"></xs:element>
+										<xs:element name="low-max-w" type="xs:int"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="pv-monitoring-configuration">
+								<xs:complexType>
+									<xs:attribute name="red-light-minutes"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="yellow-light-minutes"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="watt-floor" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="power-flow-limit-enforcement-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="very-low-soc-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="charge-capacity" type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="pfle-pv-modification-duration-minutes" type="xs:int"></xs:element>
+										<xs:element
+											name="high-inverter-temperature-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="temperature-sensor">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="exit-threshold"
+																	type="xs:int"></xs:element>
+																<xs:element name="location" type="xs:string"></xs:element>
+																<xs:element name="enter-threshold"
+																	type="xs:int"></xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="high-current-configuration-for-charge">
+											<xs:complexType>
+												<xs:attribute name="duration-seconds"
+													type="xs:int"></xs:attribute>
+												<xs:attribute name="current-threshold"
+													type="xs:int"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="low-inverter-temperature-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="temperature-sensor">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="exit-threshold"
+																	type="xs:int"></xs:element>
+																<xs:element name="location" type="xs:string"></xs:element>
+																<xs:element name="enter-threshold"
+																	type="xs:int"></xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="high-temperature-configuration-for-charge">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enabled" type="xs:string"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="low-battery-voltage-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+													<xs:element name="cell-exit-threshold"
+														type="xs:int"></xs:element>
+													<xs:element name="cell-enter-threshold"
+														type="xs:int"></xs:element>
+													<xs:element name="force-charge-rate"
+														type="xs:int"></xs:element>
+													<xs:element name="bms-shutdown-threshold"
+														type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="high-current-configuration-for-discharge">
+											<xs:complexType>
+												<xs:attribute name="duration-seconds"
+													type="xs:int"></xs:attribute>
+												<xs:attribute name="current-threshold"
+													type="xs:int"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="high-temperature-configuration-for-discharge">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enabled" type="xs:string"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="very-high-soc-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="charge-capacity" type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="high-battery-voltage-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="force-discharge-rate"
+														type="xs:int"></xs:element>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+													<xs:element name="cell-exit-threshold"
+														type="xs:int"></xs:element>
+													<xs:element name="cell-enter-threshold"
+														type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="pfle-program-minimum-engagement-minutes" type="xs:int"></xs:element>
+										<xs:element
+											name="low-temperature-configuration-for-charge">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enabled" type="xs:string"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="very-high-battery-voltage-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+													<xs:element name="cell-exit-threshold"
+														type="xs:int"></xs:element>
+													<xs:element name="cell-enter-threshold"
+														type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="very-low-battery-voltage-configuration">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+													<xs:element name="cell-exit-threshold"
+														type="xs:int"></xs:element>
+													<xs:element name="cell-enter-threshold"
+														type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element
+											name="low-temperature-configuration-for-discharge">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="exit-threshold" type="xs:int"></xs:element>
+													<xs:element name="enabled" type="xs:string"></xs:element>
+													<xs:element name="enter-threshold" type="xs:int"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute
+										name="pfle-cell-voltage-defense-configuration-enabled"
+										type="xs:string"></xs:attribute>
+									<xs:attribute
+										name="pfle-program-configuration-enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dess-monitor-pulse" type="xs:int"></xs:element>
+							<xs:element name="ev-meter-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="io-board-meter-index"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="three-phase-layout"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="simulated" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="main-load-panel-meter-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="io-board-meter-index"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="three-phase-layout"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="simulated" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="enforce-site-demand-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="deadband-rounding-mode"
+											type="xs:string"></xs:element>
+										<xs:element name="measurement-method"
+											type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="adjust-period" type="xs:int"></xs:attribute>
+									<xs:attribute name="adjust-period-max"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="adjust-period-tolerance"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="mean-load-period"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="switch-period" type="xs:int"></xs:attribute>
+									<xs:attribute name="measurement-period"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="minimum-invert-power"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="deadband-power" type="xs:int"></xs:attribute>
+									<xs:attribute name="start-period" type="xs:int"></xs:attribute>
+									<xs:attribute name="minimum-increment-power"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="alt-ac-back-coupled-meter-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="io-board-meter-index"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="three-phase-layout"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="simulated" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="offset-demand-uses-lab-code"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="qc-enabled" type="xs:string"></xs:attribute>
+						<xs:attribute
+							name="derate-scc-when-in-high-voltage-defense" type="xs:string"></xs:attribute>
+						<xs:attribute name="expects-no-grid-connection"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+						<xs:attribute name="ups-enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="topology-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="component" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"></xs:element>
+										<xs:element name="device-code" type="xs:string"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="delta-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="device-class-code" type="xs:string"></xs:element>
+							<xs:element name="modbus-connection-name"
+								type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="device-pulse-interval"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="modbus-unit-id" type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="inverter-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="limits">
+								<xs:complexType>
+									<xs:attribute name="charge-amps" type="xs:int"></xs:attribute>
+									<xs:attribute name="discharge-amps" type="xs:int"></xs:attribute>
+									<xs:attribute name="discharge-watts" type="xs:int"></xs:attribute>
+									<xs:attribute name="charge-watts" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="nominal-ac-frequency" type="xs:int"></xs:element>
+							<xs:element name="characteristics">
+								<xs:complexType>
+									<xs:attribute name="min-discharge-watts"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="min-charge-watts"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="charge-amps" type="xs:int"></xs:attribute>
+									<xs:attribute name="discharge-amps" type="xs:int"></xs:attribute>
+									<xs:attribute name="discharge-watts" type="xs:int"></xs:attribute>
+									<xs:attribute name="charge-watts" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="absorption-voltage" type="xs:int"></xs:attribute>
+						<xs:attribute name="ac-phase-count" type="xs:int"></xs:attribute>
+						<xs:attribute name="low-battery-cut-out-volts"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="absorption-minutes" type="xs:int"></xs:attribute>
+						<xs:attribute
+							name="low-battery-cut-out-hysteresis-volts" type="xs:int"></xs:attribute>
+						<xs:attribute name="charge-battery-cutoff-watts"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+						<xs:attribute name="send-to-grid-down-to-volts"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="bulk-recharge-up-to-volts"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="nominal-ac-voltage" type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="can-bus-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="connect-method" type="xs:string"></xs:element>
+							<xs:element name="can-network-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="host" type="xs:string"></xs:element>
+										<xs:element name="protocol" type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="port" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="can-interface" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="preferred-can-source-address"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="can-message-timeout"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="unique-can-device-number"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+						<xs:attribute name="can-send-delay" type="xs:int"></xs:attribute>
+						<xs:attribute name="enable-health-monitor"
+							type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="io-board-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="firmware-upgrade-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="to-version"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="meter3-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ac-phase-count" type="xs:int"></xs:element>
+										<xs:element name="scaling-factor" type="xs:int"></xs:element>
+										<xs:element name="physical-voltage-scaling-factor"
+											type="xs:int"></xs:element>
+										<xs:element name="physical-current-scaling-factor"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="fan-configuration">
+								<xs:complexType>
+									<xs:attribute name="fan-turn-off-temp"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="fan-turn-on-temp"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="fan-led-indicator"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="meter2-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ac-phase-count" type="xs:int"></xs:element>
+										<xs:element name="scaling-factor" type="xs:int"></xs:element>
+										<xs:element name="physical-voltage-scaling-factor"
+											type="xs:int"></xs:element>
+										<xs:element name="physical-current-scaling-factor"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="door-alarm-configuration">
+								<xs:complexType>
+									<xs:attribute name="door-alarm-switch"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="meter1-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ac-phase-count" type="xs:int"></xs:element>
+										<xs:element name="scaling-factor" type="xs:int"></xs:element>
+										<xs:element name="physical-voltage-scaling-factor"
+											type="xs:int"></xs:element>
+										<xs:element name="physical-current-scaling-factor"
+											type="xs:int"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="enable-usb-flow-control"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="io-board-can-bus-address"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="package-code" type="xs:string"></xs:element>
+				<xs:element name="kokam-battery-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="firmware-upgrade-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="to-version"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="device-class-code" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="canbus-address" type="xs:int"></xs:attribute>
+						<xs:attribute name="hundred-soc-maps-to"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="zero-soc-maps-to" type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="edmi-meters">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="edmi-meter">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="modbus-connection-name"
+											type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="mercedes-battery-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="device-class-code" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="hems-efficiency-service-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="rainforest-gateway3-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="cloud-id"></xs:element>
+										<xs:element name="password"></xs:element>
+										<xs:element name="end-point"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="request-timeout" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="rainforest-gateway2-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="cloud-id"></xs:element>
+										<xs:element name="password"></xs:element>
+										<xs:element name="end-point"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="request-timeout" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="emerson-thermostat-device2-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hardware-address"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="data-poll-interval"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="data-poll-timeout"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="safe-plug-device1-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hardware-address"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="data-poll-interval"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="data-poll-timeout"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="emerson-thermostat-device1-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hardware-address"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="data-poll-interval"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="data-poll-timeout"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="emerson-thermostat-device4-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hardware-address"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="data-poll-interval"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="data-poll-timeout"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="rainforest-gateway1-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="cloud-id"></xs:element>
+										<xs:element name="password"></xs:element>
+										<xs:element name="end-point"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="request-timeout" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="data-collector-cron"
+								type="xs:string"></xs:element>
+							<xs:element
+								name="emerson-thermostat-device3-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hardware-address"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="data-poll-interval"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="data-poll-timeout"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="request-processing-time"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="enable-rainforest-event-manager"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="enable-hems-data-collector"
+							type="xs:string"></xs:attribute>
+						<xs:attribute
+							name="polling-event-status-interval-in-ms" type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+						<xs:attribute name="router-request-timeout"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="hvac-load" type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="outback-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="outback-radian-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="modbus-connection-name"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="device-class-code" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="battery-configuration">
+					<xs:complexType>
+						<xs:attribute name="expect-battery-device"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="battery-capacity-amp-hours"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="discharge-critical-low-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="batt-temp-coefficient"
+							type="xs:double"></xs:attribute>
+						<xs:attribute name="discharge-critical-high-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="discharge-warn-high-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="discharge-warn-low-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="charge-critical-high-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="bms-controllable"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="charge-critical-low-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="max-stored-watts" type="xs:int"></xs:attribute>
+						<xs:attribute name="charge-warn-low-temp"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="charge-warn-high-temp"
+							type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="modbus-connections">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="rtu-connection">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="serial-protocol" type="xs:string"></xs:element>
+										<xs:element name="local-device-name"
+											type="xs:string"></xs:element>
+										<xs:element name="parity" type="xs:string"></xs:element>
+										<xs:element name="name" type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="echo" type="xs:string"></xs:attribute>
+									<xs:attribute name="remote-slave-id" type="xs:int"></xs:attribute>
+									<xs:attribute name="data-bit" type="xs:int"></xs:attribute>
+									<xs:attribute name="baud" type="xs:int"></xs:attribute>
+									<xs:attribute name="time-out-in-milis"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="retries" type="xs:int"></xs:attribute>
+									<xs:attribute name="check-valid" type="xs:string"></xs:attribute>
+									<xs:attribute name="stop-bit" type="xs:int"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="tcp-connection">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="port" type="xs:int"></xs:element>
+										<xs:element name="ip-address" type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+						<xs:attribute name="use-jni-adapter" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="external-service-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ev-charger-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="charger-type"></xs:element>
+										<xs:element name="station-id"></xs:element>
+										<xs:element name="end-point" type="xs:string"></xs:element>
+										<xs:element name="user-name"></xs:element>
+										<xs:element name="password"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="read-timeout" type="xs:int"></xs:attribute>
+									<xs:attribute name="polling-interval"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="connect-timeout" type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="schneider-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ac-src-id-for-grid" type="xs:string"></xs:element>
+							<xs:element name="dc-src-id-for-inverter-charger"
+								type="xs:string"></xs:element>
+							<xs:element name="external-temperature-sensor-id"
+								type="xs:string"></xs:element>
+							<xs:element
+								name="schneider-power-factor-control-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="shift" type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="schneider-sps-configuration">
+								<xs:complexType>
+									<xs:attribute name="sps-enabled-to-control-bms"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="sps-on-means-bms-on"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="active-high" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element
+								name="schneider-solar-charge-controller-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element
+											name="dc-src-id-for-solar-charge-controller-pV"
+											type="xs:string"></xs:element>
+										<xs:element
+											name="dc-src-id-for-solar-charge-charger" type="xs:string"></xs:element>
+										<xs:element
+											name="dc-src-id-for-solar-charge-controller-dc-bus"
+											type="xs:string"></xs:element>
+										<xs:element name="device-class-code"
+											type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="sweep-enabled-time-in-ms"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="mppt-count" type="xs:int"></xs:attribute>
+									<xs:attribute name="sweep-disabled-time-in-ms"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="sweep-control-enabled"
+										type="xs:string"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ac-src-id-for-load" type="xs:string"></xs:element>
+							<xs:element name="schneider-gvs-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="min-vGrid" type="xs:int"></xs:element>
+										<xs:element name="VSetHigh" type="xs:int"></xs:element>
+										<xs:element name="max-qCap" type="xs:int"></xs:element>
+										<xs:element name="delay-time" type="xs:int"></xs:element>
+										<xs:element name="max-qInd" type="xs:int"></xs:element>
+										<xs:element name="VSetLow" type="xs:double"></xs:element>
+										<xs:element name="max-vGrid" type="xs:int"></xs:element>
+										<xs:element name="VThreshold" type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dc-src-id-for-inverter-dc-bus"
+								type="xs:string"></xs:element>
+							<xs:element
+								name="schneider-anti-islanding-configuration">
+								<xs:complexType>
+									<xs:attribute
+										name="slow-line1-to-line2-under-voltage" type="xs:double"></xs:attribute>
+									<xs:attribute
+										name="fast-line-to-neutral-over-voltage" type="xs:int"></xs:attribute>
+									<xs:attribute
+										name="slow-line-to-neutral-under-voltage" type="xs:double"></xs:attribute>
+									<xs:attribute
+										name="fast-line1-to-line2-under-voltage" type="xs:int"></xs:attribute>
+									<xs:attribute
+										name="fast-line1-to-line2-over-voltage" type="xs:int"></xs:attribute>
+									<xs:attribute
+										name="slow-line1-to-line2-over-voltage" type="xs:int"></xs:attribute>
+									<xs:attribute
+										name="slow-line-to-neutral-over-voltage" type="xs:int"></xs:attribute>
+									<xs:attribute name="slow-delay-in-milliseconds"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="ai-reconnect-delay"
+										type="xs:int"></xs:attribute>
+									<xs:attribute
+										name="fast-line-to-neutral-under-voltage" type="xs:int"></xs:attribute>
+									<xs:attribute name="over-frequency"
+										type="xs:double"></xs:attribute>
+									<xs:attribute name="under-frequency"
+										type="xs:double"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="device-class-code" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="ac1-transfer-delay" type="xs:int"></xs:attribute>
+						<xs:attribute name="log-xw-comm-statuses"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="disable-dispatch-ramp"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="use-ac-sts-rms" type="xs:string"></xs:attribute>
+						<xs:attribute name="calibration-delay-seconds"
+							type="xs:int"></xs:attribute>
+						<xs:attribute
+							name="inverter-xw-plus-with-calibration" type="xs:string"></xs:attribute>
+						<xs:attribute
+							name="external-temperature-sensor-supported" type="xs:string"></xs:attribute>
+						<xs:attribute name="inverter-xwplus" type="xs:string"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="eaton-emcb-connection-config">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="devices-config">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="unicast-key" type="xs:string"></xs:element>
+										<xs:element name="name" type="xs:string"></xs:element>
+										<xs:element name="ip-address" type="xs:string"></xs:element>
+										<xs:element name="device-id" type="xs:string"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="broadcast-key" type="xs:string"></xs:element>
+						</xs:sequence>
+						<xs:attribute name="hash-check-random-counter"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="blocking-queue-timeout-ms"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="port-no" type="xs:int"></xs:attribute>
+						<xs:attribute name="peridic-discover-interval-ms"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="device-pulse-interval-ms"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="max-number-discover-device"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="socket-time-out" type="xs:int"></xs:attribute>
+						<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+						<xs:attribute name="periodic-discovery"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="device-pulse-start-ms"
+							type="xs:int"></xs:attribute>
+						<xs:attribute
+							name="pulse-start-delay-ms-polling-device" type="xs:int"></xs:attribute>
+						<xs:attribute name="pulse-interval-ms-polling-device"
+							type="xs:int"></xs:attribute>
+						<xs:attribute name="max-number-time-out"
+							type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="gateway-configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="data-usage-limits">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="red-mb" type="xs:int"></xs:element>
+										<xs:element name="yellow-mb" type="xs:int"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="marge-url-base" type="xs:string"></xs:element>
+							<xs:element name="dnp3-slave-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dnp3-master-id"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="local-port" type="xs:int"></xs:attribute>
+									<xs:attribute name="local-dnp-channel"
+										type="xs:int"></xs:attribute>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="remote-dnp-channel"
+										type="xs:int"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="http-proxy-configuration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="http-proxy-host"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="enabled" type="xs:string"></xs:attribute>
+									<xs:attribute name="http-proxy-port" type="xs:int"></xs:attribute>
+									<xs:attribute name="secure" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="poll-period" type="xs:int"></xs:attribute>
+						<xs:attribute name="data-poll-period" type="xs:int"></xs:attribute>
+						<xs:attribute name="compress-polls" type="xs:string"></xs:attribute>
+						<xs:attribute name="marge-http-timeout" type="xs:int"></xs:attribute>
+						<xs:attribute name="use-incremental-downloads"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="auto-upgrade-gateway-software"
+							type="xs:string"></xs:attribute>
+						<xs:attribute
+							name="disable-ssl-cert-checking-on-poll" type="xs:string"></xs:attribute>
+						<xs:attribute name="use-long-polling-for-mini-polls"
+							type="xs:string"></xs:attribute>
+						<xs:attribute name="can-bus-queue-size-warning"
+							type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;GetIDs.java&apos; to &apos;EATONJar/src/main/java/com.sunverge.devices.eaton.emcb&apos;&#x0A;- Original project: &apos;EatonJava&apos;&#x0A;- Destination element: &apos;EATONJar/src/main/java/com.sunverge.devices.eaton.emcb&apos;&#x0A;- Original element: &apos;GetIDs.java&apos;" description="Copy compilation unit" destination="=EATONJar/src\/main\/java&lt;com.sunverge.devices.eaton.emcb" element1="/src\/main\/java&lt;{GetIDs.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1582226392778" units="1" version="1.0"/>
+</session>

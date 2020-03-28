@@ -1,0 +1,5 @@
+2020-03-24T15:08:02,874 DEBUG [main] log4jTest.Main - Debug Message Logged !!!
+2020-03-24T15:08:02,876  INFO [main] log4jTest.Main - Info Message Logged !!!
+2020-03-24T15:08:02,876 ERROR [main] log4jTest.Main - Error Message Logged !!!
+java.lang.NullPointerException: NullError
+	at log4jTest.Main.main(Main.java:11) [classes/:?]

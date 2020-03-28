@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="file" value="maggie.log" />
+		<Property name="eatonemcbfile" value="eaton.log" />
+	</Properties>
+
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{ISO8601} %5p [%t] %c - %m%n" />
+		</Console>
+		<RollingFile name="file" fileName="${file}"
+			filePattern="${file}.%d{yyyy-MM-dd}">
+			<PatternLayout>
+				<Pattern>%d{ISO8601} %5p [%t] %c - %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="eaton"
+			fileName="${eatonemcbfile}"
+			filePattern="${eatonemcbfile}.%d{yyyy-MM-dd}">
+			<PatternLayout>
+				<Pattern> %d{ISO8601} %5p [%t] %c - %m%n</Pattern>
+			</PatternLayout>
+			<ThresholdFilter level="error"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<logger name="log4jTest" level="debug">
+			<AppenderRef ref="eaton" />
+		</logger>
+		<Root level="warn">
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+</Configuration>

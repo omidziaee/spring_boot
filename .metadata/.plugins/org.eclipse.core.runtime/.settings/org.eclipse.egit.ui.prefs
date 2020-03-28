@@ -1,0 +1,18 @@
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git_4a53ccc56352b6c1147fe47317395ffbb8f7a27a=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git_8877aa58774be574c7da9b8beaece55c13472108=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git_One_Comm=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git_a5ac57b917c8f6a38f7ee30e210b3fed19a1c428=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/ModBusScanner/.git_Adding_block=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/ModBusScanner/.git_HoldingOrInputReg=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/ModBusScanner/.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/ModBusUtil/.git_HoldingOrInput=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+//BranchProjectTracker__/Users/omidziaee/Documents/Testing_Projects/ModBusUtil/.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects>\n<project>/</project>\n</projects>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>last version with initial discovery works fine.</message>\n<message>Separate classes with new keys not working</message>\n<message>change the keys</message>\n<message>separate the sending and toggling messages into classes&\#x0A;</message>\n<message>Last worked fine with killing the thread and class.</message>\n<message>added more message type</message>\n<message>correct the timeout counter</message>\n<message>Change the stuff</message>\n<message>Last version before using one EmcbComm for multiple.</message>\n<message>Change the structure just one package&\#x0A;</message>\n</messages>
+eclipse.preferences.version=1
+resourcehistory_graph_split=338,661
+resourcehistory_rev_split=700,300
+resourcehistory_show_all_branches=true
+show_checkout_confirmation=false
+show_detached_head_warning=false
+show_initial_config_dialog=false
