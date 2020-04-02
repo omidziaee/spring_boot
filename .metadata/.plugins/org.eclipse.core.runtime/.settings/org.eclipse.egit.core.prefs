@@ -1,5 +1,5 @@
-GitRepositoriesView.GitDirectories=/Users/omidziaee/Documents/Testing_Projects/EATON/emcb-udp-master/.git\:/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git\:/Users/omidziaee/Documents/Testing_Projects/ModBusUtil/.git\:
-GitRepositoriesView.GitDirectories.relative=EATON/emcb-udp-master/.git\:EATONJar/.git\:ModBusUtil/.git\:
+GitRepositoriesView.GitDirectories=/Users/omidziaee/Documents/Testing_Projects/EATON/emcb-udp-master/.git\:/Users/omidziaee/Documents/Testing_Projects/EATONJar/.git\:/Users/omidziaee/Documents/Testing_Projects/ModBusUtil/.git\:/Users/omidziaee/Documents/Testing_Projects/.git\:
+GitRepositoriesView.GitDirectories.relative=EATON/emcb-udp-master/.git\:EATONJar/.git\:ModBusUtil/.git\:.git\:
 RepositorySearchDialogSearchPath=/Users/omidziaee/Documents/Testing_Projects/EATON/emcb-udp-master
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

@@ -20,6 +20,13 @@ public class Test {
 			System.out.println(i);
 		}
 		
+		final boolean useOmid = testReferencing.isUseOmid();
+		if(testReferencing.isUseOmid()) {
+			System.out.println("this is omid");
+		} else {
+			System.out.println("this is not omid");
+		}
+		
 
 	}
 	
